@@ -1,0 +1,180 @@
+
+POST  http://localhost:4000/auth/login
+Content-Type: application/json 
+
+
+{
+    "email" : "admin" ,
+    "password" : "admin"
+}
+
+###
+
+POST  http://localhost:4000/auth/register
+Content-Type: application/json 
+
+
+{
+    "email" : "admin2" ,
+    "password" : "admin2" ,
+    "fullname" : "Sila Kangluang" ,
+    "studentID" : "2",
+    "admin" : true
+}
+
+###
+
+GET http://localhost:4000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE4ODE1MzcwLCJleHAiOjE2MTg4MjI1NzAsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.AyhM8-DgC_7EPD1D2I6JrRdDU1aj7_qzu8Ov4KrxOBg
+
+###
+
+POST http://localhost:4000/auth/refresh-token
+Authorization: Bearer 
+
+
+
+
+####
+POST  http://localhost:4000/subject/
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MjQ0NTYwLCJleHAiOjE2MTkzMzA5NjAsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.VvKdRnctltSvjeQa9JzShGzM159uWsgIqZnAN_yjk8M
+
+{
+    "shortname" : "INT4709" ,
+    "fullname" : "หัวข้อพิเศษทางการจัดการเทคโนโลยีสารสนเทศ",
+    "credit" : "3"
+}
+
+###
+
+GET  http://localhost:4000/articles
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTgwNDA2MTYsImV4cCI6MTYxODA0NzgxNiwiYXVkIjoiNjA2ZDZkNzE5YzNhMTIzN2IwMTZiM2E1In0.R4yCEKQ6q--FXn0EW7gWgzpug9EpgzDz_xo90B4v-mY
+
+###
+GET  http://localhost:4000/articles/60700e39260fd52c301a8e28
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTc5NTkxOTQsImV4cCI6MTYxNzk2NjM5NCwiYXVkIjoiNjA2ZDZkNzE5YzNhMTIzN2IwMTZiM2E1In0.h2i6Rg8ovulWy4hL_CIfb2hyeCpSxpeNUjn99WO5f9E
+
+
+###
+PATCH  http://localhost:4000/articles/60700e39260fd52c301a8e28
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTc5NTkxOTQsImV4cCI6MTYxNzk2NjM5NCwiYXVkIjoiNjA2ZDZkNzE5YzNhMTIzN2IwMTZiM2E1In0.h2i6Rg8ovulWy4hL_CIfb2hyeCpSxpeNUjn99WO5f9E
+
+{
+    "title" : "ทดสอบเพิ่มบทความ1" ,
+    "content": "ทดสอบเพิ่มบทความ1"
+
+}
+
+
+
+###
+DELETE  http://localhost:4000/articles/60700e39260fd52c301a8e28
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTc5NTkxOTQsImV4cCI6MTYxNzk2NjM5NCwiYXVkIjoiNjA2ZDZkNzE5YzNhMTIzN2IwMTZiM2E1In0.h2i6Rg8ovulWy4hL_CIfb2hyeCpSxpeNUjn99WO5f9E
+
+
+
+###
+
+
+POST http://localhost:4000/course/
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MTYwNzYyLCJleHAiOjE2MTkyNDcxNjIsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.S2-qP21MnuZslTqFrMU-9CY67Z1VZD3N20xzQKIdgdE
+
+{
+    "faculty" : "วิทยาศาสตร์" ,
+    "major" :  "เทคโนโลยีสารสนเทศ" ,
+    "year" : "2021-4-20",
+    "totalCredit"  : "133",
+    "courseList" : [{
+        "subjectList" : [{ "subjectId" :"607d69bf4b36203788ce231d"}] 
+        } ,
+        {
+        "subjectList" : [{ "subjectId" :"607d69bf4b36203788ce231d"}] 
+        },
+        {
+        "subjectList" : [{ "subjectId" :"607d69bf4b36203788ce231d"}] 
+        }]
+}
+
+###
+Get http://localhost:4000/term/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MDA3NTk5LCJleHAiOjE2MTkwMTQ3OTksImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.NpasCg77NqMfVzA--r0x6YsqnkUVoGDdwgmGxqF4_lc
+
+
+###
+
+Get http://localhost:4000/term/60801cd47648be1314ae7f82
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MDA3NTk5LCJleHAiOjE2MTkwMTQ3OTksImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.NpasCg77NqMfVzA--r0x6YsqnkUVoGDdwgmGxqF4_lc
+
+
+###
+
+PATCH  http://localhost:4000/term/60801cd47648be1314ae7f82
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MDA5NTY1LCJleHAiOjE2MTkwOTU5NjUsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.EdpUjZS-iPIELChOPMPTu7hdku29veoPuX4pv_UDykw
+
+{                 
+                
+}
+
+###
+
+DELETE   http://localhost:4000/term/60801cd47648be1314ae7f82
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MDA5NTY1LCJleHAiOjE2MTkwOTU5NjUsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.EdpUjZS-iPIELChOPMPTu7hdku29veoPuX4pv_UDykw
+
+
+
+
+
+####
+
+POST http://localhost:4000/term/
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjE5MTAxMTkzLCJleHAiOjE2MTkxODc1OTMsImF1ZCI6IjYwN2QxOTlmN2QwZTU1MzRiYzNkY2ZhYiJ9.4mau7h2sF_LAnY04QPKd5pZcwV0ZQU6zNXz0U4PGIx8
+
+{
+    "year" : "2564" ,
+    "term" : "s" ,
+    "openSubject" : [{
+
+        "subjectID" : "607d69bf4b36203788ce231d" ,
+        "teacher" : "sila kangluang" ,
+        "timeTable" : [{
+            "stime" : "720" ,
+            "etime" : "798" ,
+            "room" : "SCL211",
+            "day" : "Mon" ,
+            "description" : "Lecture"
+        },{
+            "stime" : "840" ,
+            "etime" : "978" ,
+            "room" : "SCL201",
+            "day" : "Wed" ,
+            "description" : "Lab"
+        }]
+    },{
+
+        "subjectID" : "607d69bf4b36203788ce231d" ,
+        "teacher" : "Toey sutlor" ,
+        "timeTable" : [{
+            "stime" : "720" ,
+            "etime" : "798" ,
+            "room" : "SCL211",
+            "day" : "Mon" ,
+            "description" : "Lecture"
+        },{
+            "stime" : "840" ,
+            "etime" : "978" ,
+            "room" : "SCL201",
+            "day" : "Wed" ,
+            "description" : "Lab"
+        }]
+    }]
+   
+}
